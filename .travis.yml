@@ -17,6 +17,7 @@ cache:
 before_script:
   - composer self-update
   - composer install --no-interaction
+  - touch database/database.sqlite
   - php artisan migrate --no-interaction -vvv
 
 script:
