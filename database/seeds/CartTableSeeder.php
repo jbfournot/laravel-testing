@@ -11,6 +11,6 @@ class CartTableSeeder extends Seeder
      */
     public function run()
     {
-        factory(App\Models\Cart::class, 100)->create();
+        factory(App\Models\Cart::class, 200)->create();
     }
 }

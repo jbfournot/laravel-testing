@@ -11,15 +11,18 @@ class Product extends Model
     
     const FIELDS_FILLABLE = ['name', 'description', 'supplier_id', 'supplier_product_id', 'qty', 'last_refresh_at'];
 
-    protected $with = ['supplier', 'orders'];
+    protected $with = ['supplier'];
     protected $casts = ['last_refresh_at' => 'datetime'];
     protected $fillable = self::FIELDS_FILLABLE;
 
-    public function orders(){
-        return $this->hasMany(Cart::class, 'product_id');
+    public function getExpiredAttribute($query)
+    {
+        // on souhaite avoir ici un scope pour filter les produits expirés
+        // produits dont le champ last_refresh_at > 1 mois en date du jour
     }
 
-    public function supplier(){
+    public function supplier()
+    {
         return $this->hasOne(Supplier::class, 'id');
     }
 
