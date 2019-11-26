@@ -57,7 +57,7 @@ Pour créer un nouvel attribut à un model, consulter [cette page de la document
 
 Ne pas oublier d'ajouter le champ `qty_available` dans les résultats de l'API en modifiant le fichier [ProductRessource](app/Http/Resources/Product.php).
 
-## Tâche 3: Import des produits depuis 
+## Tâche 3: Import des produits depuis des fichiers externes 
 
 Le client souhaite pouvoir importer manuellement des listes de produits fournies par ses fournisseurs dans son application de gestion. Les trois listes à importer sont localisées dans le dossier [`suppliers-data`](/suppliers-data). Le client vous fait remarquer que la structure des tableaux est différente pour chaque fournisseur, et **qu'il faut ajouter dans la base de données le nouveau fournisseur SGO**.
 
